@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+  --white-color-: #F5F7F8;
+  --dark-white-color-: #E3E3E3;
+  --red-color-: #DC2F2F;
+  --green-color-: #9BCF53;
+  --black-color-: #212121;
+  --grey-color-: #686D76;
+  --purple-color: #5b5fc7;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  font-weight: 600;
+  color: var(--grey-color-);
+}
+
+body{
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--black-color-);
+
+}
+
+.content{
+  border: none;
+  border-radius: 3px;
+  padding: 2rem;
+  background-color: var(--dark-white-color-);
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 1em;
+}
+
+.copy{
+  width: 100%;
+  display: flex;
+  place-items: center;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.requirements{
+  display: grid;
+  grid-template-columns: 24px 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;   
+  gap: 1rem;
+  place-items: start;
+}
+
+.material-symbols-outlined{
+  width: 4px;
+  color: var(--grey-color-);
+  position: relative;
+  bottom: 5px;
+}
+
+input{
+  max-width: 190px;
+  background-color: var(--white-color-);
+  color: #242424;
+  padding: .15rem .5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+  transition: all .1s ease-in-out;
+}
+input:focus {
+  border-bottom: 2px solid var(--purple-color);
+}
+
+input:hover {
+  outline: 1px solid var(--black-color-);
+}
+
+button{
+  background-color: var(--black-color-);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition: all .1s ease-in;
+}
+
+h1{
+  color: var(--black-color-);
+}
+
+button span.copy{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button .material-symbols-outlined{
+  position: relative;
+  bottom: 0px;
+  right: 0px;
+  color: var(--grey-color-);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+button:hover {
+  opacity: .9;
+  scale: 1.05;
+  animation: isBouncing 1s;
+}
+
+.notCoped:hover {
+  animation: notCoped .5s;
+}
+
+.wasCoped:hover {
+  animation: wasCoped .5s;
+}
+
+.notValid{
+  color: var(--red-color-);
+}
+
+.valid{
+  color: var(--green-color-);
+}
+/* Key Frames */
+
+@keyframes isBouncing {
+  0% {
+
+  }
+  20% {
+    transform: translate(0px, -5px );
+  }
+  40% {
+    transform: translate(-2.5px, -5px );
+    transform: rotate(2.5deg)
+  }
+  45% {
+    transform: translate(-2.5px, -5px );
+    transform: rotate(-2.5deg)
+  }
+  55% {
+    transform: translate(2.5px, -5px );
+    transform: rotate(2.5deg)
+  }
+  60% {
+    transform: translate(2.5px, -5px );
+    transform: rotate(-2.5deg)
+  }
+  80% {
+    transform: translate(0px, -5px );
+
+  }
+  100% {
+    transform: translate(0px, 0px );
+  }
+}
+
+@keyframes notCoped {
+  0% {
+    transform: translate(0px, 0px );
+    background-color: var(--red-color-);
+  }
+  11% {
+    transform: translate( -5px, 0px );
+    background-color: var(--red-color-);
+  }
+  22% {
+    transform: translate( 5px, 0px );
+    background-color: var(--red-color-);
+  }  
+  33% {
+    transform: translate( -5px, 0px );
+  }
+  44% {
+    transform: translate( 5px, 0px );
+  }
+  55% {
+    transform: translate( -5px, 0px );
+  }
+  66% {
+    transform: translate( 5px, 0px );
+  }
+  77% {
+    transform: translate( -5px, 0px );
+  }
+  88% {
+    transform: translate( 5px, 0px );
+  }
+  100% {
+    transform: translate( -5px, 0px );
+  }
+}
+
+@keyframes wasCoped {
+  0% {
+    transform: translate(0px, 0px );
+    background-color: var(--green-color-);
+  }
+  11% {
+    transform: translate( 0px, -2.5px );
+    background-color: var(--green-color-);
+  }
+  22% {
+    transform: translate( 0px, 2.5px );
+    background-color: var(--green-color-);
+  }  
+  33% {
+    transform: translate( 0px, -2.5px );
+    background-color: var(--green-color-);
+  }
+  44% {
+    transform: translate( 0px, 2.5px );
+    background-color: var(--green-color-);
+  }
+  55% {
+    transform: translate( 0px, -2.5px );
+  }
+  66% {
+    transform: translate( 0px, 2.5px );
+  }
+  77% {
+    transform: translate( 0px, -2.5px );
+  }
+  88% {
+    transform: translate( 0px, 2.5px);
+  }
+  100% {
+    transform: translate( 0px, -2.5px );
+  }
+}
