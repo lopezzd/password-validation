@@ -9,7 +9,11 @@ const copyText = () => {
       ? addAnimation('notCoped')
       : !/[0-9]/.test(input.value)
         ? addAnimation('notCoped')
-        : (navigator.clipboard.writeText(input.value), addAnimation('wasCoped'));
+        : !/[@$!%*?&]/.test(input.value)
+          ? addAnimation('notCoped')
+          : input.value.includes(' ')
+            ? addAnimation('notCoped')
+            :(navigator.clipboard.writeText(input.value), addAnimation('wasCoped'));
 }
 
 const addAnimation = (x) => {
